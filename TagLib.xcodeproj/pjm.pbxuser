@@ -1,0 +1,106 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = 8DC2EF4F0486A6940098B216 /* TagLib */;
+		addToTargets = (
+			8DC2EF4F0486A6940098B216 /* TagLib */,
+		);
+		codeSenseManager = 1E1D6B3612D50F5B00A0DC34 /* Code sense */;
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 315955078;
+			PBXWorkspaceStateSaveDate = 315955078;
+		};
+		sourceControlManager = 1E1D6B3512D50F5B00A0DC34 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	1E1D6B2112D50F5B00A0DC34 /* TLMetaData.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 3660}}";
+			sepNavSelRange = "{237, 0}";
+			sepNavVisRange = "{0, 1160}";
+			sepNavWindowFrame = "{{176, 17}, {973, 709}}";
+		};
+	};
+	1E1D6B2212D50F5B00A0DC34 /* TLMetaData.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 4830}}";
+			sepNavSelRange = "{1820, 0}";
+			sepNavVisRange = "{1016, 931}";
+			sepNavWindowFrame = "{{176, 17}, {973, 709}}";
+		};
+	};
+	1E1D6B3512D50F5B00A0DC34 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	1E1D6B3612D50F5B00A0DC34 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	1E1D6B5612D5107B00A0DC34 /* TLID3MetaData.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 596}}";
+			sepNavSelRange = "{201, 0}";
+			sepNavVisRange = "{0, 424}";
+			sepNavWindowFrame = "{{15, 164}, {973, 709}}";
+		};
+	};
+	1E1D6B5712D5107B00A0DC34 /* TLID3MetaData.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 7680}}";
+			sepNavSelRange = "{149, 0}";
+			sepNavVisRange = "{160, 200}";
+			sepNavWindowFrame = "{{15, 164}, {973, 709}}";
+		};
+	};
+	1E1D6B7212D5117600A0DC34 /* TLMP4MetaData.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 596}}";
+			sepNavSelRange = "{190, 0}";
+			sepNavVisRange = "{0, 384}";
+		};
+	};
+	1E1D6B7312D5117600A0DC34 /* TLMP4MetaData.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 6570}}";
+			sepNavSelRange = "{234, 0}";
+			sepNavVisRange = "{7203, 716}";
+			sepNavWindowFrame = "{{61, 122}, {973, 709}}";
+		};
+	};
+	32DBCF5E0370ADEE00C91783 /* TagLib_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 596}}";
+			sepNavSelRange = "{105, 0}";
+			sepNavVisRange = "{0, 144}";
+			sepNavWindowFrame = "{{153, 38}, {973, 709}}";
+		};
+	};
+	8DC2EF4F0486A6940098B216 /* TagLib */ = {
+		activeExec = 0;
+	};
+	C817AA6F1077A14E00E71CCE /* tag.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 2370}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1766, 1115}";
+			sepNavWindowFrame = "{{107, 80}, {973, 709}}";
+		};
+	};
+	C817AA7D1077A14E00E71CCE /* taglib.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {914, 2880}}";
+			sepNavSelRange = "{7738, 0}";
+			sepNavVisRange = "{1723, 872}";
+			sepNavWindowFrame = "{{130, 59}, {973, 709}}";
+		};
+	};
+}

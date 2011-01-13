@@ -1,0 +1,1 @@
+This is a fork of TagLib that compiles into a reusable OS X framework. Cocoa bindings are included in the form of the TLMetaData class cluster.
