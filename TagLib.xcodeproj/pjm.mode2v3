@@ -272,7 +272,7 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>7</integer>
+											<integer>11</integer>
 											<integer>3</integer>
 											<integer>1</integer>
 											<integer>0</integer>
@@ -441,8 +441,8 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>1E1D6C0F12D5179100A0DC34</string>
-				<string>1E1D6C1012D5179100A0DC34</string>
+				<string>1E428F7012EB67CB0004DFC2</string>
+				<string>1E428F7112EB67CB0004DFC2</string>
 				<string>1C9437FD063B20B00039CFAC</string>
 				<string>1C9437FE063B20B00039CFAC</string>
 				<string>1C9437FF063B20B00039CFAC</string>
@@ -479,7 +479,7 @@
 	<integer>0</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1E1D6C1212D5179100A0DC34</string>
+		<string>1E428F7212EB67CB0004DFC2</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
 		<string>/Users/pjm/Documents/Projects/TagLib/TagLib.xcodeproj</string>
 	</array>
@@ -698,7 +698,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D52069F1CE1000CFCEE</string>
-				<string>1E1D6C1112D5179100A0DC34</string>
+				<string>1E428F7512EB67CB0004DFC2</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
