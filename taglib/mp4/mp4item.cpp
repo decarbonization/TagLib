@@ -27,8 +27,6 @@
 #include <config.h>
 #endif
 
-#ifdef WITH_MP4
-
 #include <TagLib/taglib.h>
 #include <TagLib/tdebug.h>
 #include <TagLib/mp4item.h>
@@ -145,5 +143,3 @@ MP4::Item::isValid() const
 {
   return d->valid;
 }
-
-#endif

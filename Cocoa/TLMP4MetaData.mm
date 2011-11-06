@@ -11,7 +11,6 @@
 
 #import "TagLib.h"
 #import "tstring.h"
-#import "fileref.h"
 #import "mp4file.h"
 
 using namespace TagLib;
@@ -43,19 +42,19 @@ using namespace TagLib;
 {
 	if(url && [url isFileURL] && [[self metaDataFileTypes] containsObject:[[url path] pathExtension]])
 	{
-		MP4::File file([[url path] fileSystemRepresentation]);
+		MP4::File file([[url path] fileSystemRepresentation], /*openReadOnly=*/true);
 		return (file.isOpen() && file.isValid());
 	}
 	return NO;
 }
 
-- (id)initWithURL:(NSURL *)url error:(NSError **)error
+- (id)initWithURL:(NSURL *)url openReadOnly:(BOOL)openReadOnly error:(NSError **)error
 {
 	NSAssert([url isFileURL], @"Non-local URL given to TLMP4MetaData.");
 	
 	if(url && (self = [super init]))
 	{
-		_tagFile = new MP4::File([[url path] fileSystemRepresentation]);
+		_tagFile = new MP4::File([[url path] fileSystemRepresentation], openReadOnly);
 		if(!_tagFile || !(_tagFile->isOpen() && _tagFile->isValid()))
 		{
 			if(_tagFile)

@@ -27,8 +27,6 @@
 #include <config.h>
 #endif
 
-#ifdef WITH_MP4
-
 #include <TagLib/tdebug.h>
 #include <TagLib/tstring.h>
 #include <TagLib/mp4file.h>
@@ -165,5 +163,3 @@ MP4::Properties::bitsPerSample() const
 {
   return d->bitsPerSample;
 }
-
-#endif

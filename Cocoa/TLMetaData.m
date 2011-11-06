@@ -125,7 +125,7 @@ static NSMutableSet *PKMetaDataGetClasses()
 	return ([self metaDataClassForURL:url] != nil);
 }
 
-- (id)initWithURL:(NSURL *)url error:(NSError **)error
+- (id)initWithURL:(NSURL *)url openReadOnly:(BOOL)openReadOnly error:(NSError **)error
 {
 	NSParameterAssert(url);
 	
@@ -138,7 +138,7 @@ static NSMutableSet *PKMetaDataGetClasses()
 	if(!metaDataClass)
 		return nil;
 	
-	TLMetaData *newSelf = [[metaDataClass alloc] initWithURL:url error:error];
+	TLMetaData *newSelf = [[metaDataClass alloc] initWithURL:url openReadOnly:openReadOnly error:error];
 	if(newSelf)
 	{
 		[self release];

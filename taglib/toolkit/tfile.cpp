@@ -68,7 +68,7 @@ struct FileNameHandle : public std::string
 class File::FilePrivate
 {
 public:
-  FilePrivate(FileName fileName);
+  FilePrivate(FileName fileName, bool openReadOnly);
 
   FILE *file;
 
@@ -80,7 +80,7 @@ public:
   static const uint bufferSize = 1024;
 };
 
-File::FilePrivate::FilePrivate(FileName fileName) :
+File::FilePrivate::FilePrivate(FileName fileName, bool openReadOnly) :
   file(0),
   name(fileName),
   readOnly(true),
@@ -93,12 +93,19 @@ File::FilePrivate::FilePrivate(FileName fileName) :
 
   if(wcslen((const wchar_t *) fileName) > 0) {
 
-    file = _wfopen(name, L"rb+");
-
-    if(file)
-      readOnly = false;
-    else
+    if(openReadOnly)
+    {
       file = _wfopen(name, L"rb");
+    }
+    else
+    {
+      file = _wfopen(name, L"rb+");
+
+      if(file)
+        readOnly = false;
+      else
+        file = _wfopen(name, L"rb");
+    }
 
     if(file)
       return;
@@ -107,12 +114,20 @@ File::FilePrivate::FilePrivate(FileName fileName) :
 
 #endif
 
-  file = fopen(name, "rb+");
-
-  if(file)
-    readOnly = false;
-  else
+	
+  if(openReadOnly)
+  {
     file = fopen(name, "rb");
+  }
+  else
+  {
+    file = fopen(name, "rb+");
+
+    if(file)
+      readOnly = false;
+    else
+      file = fopen(name, "rb");
+  }
 
   if(!file)
     debug("Could not open file " + String((const char *) name));
@@ -122,9 +137,9 @@ File::FilePrivate::FilePrivate(FileName fileName) :
 // public members
 ////////////////////////////////////////////////////////////////////////////////
 
-File::File(FileName file)
+File::File(FileName file, bool openReadOnly)
 {
-  d = new FilePrivate(file);
+  d = new FilePrivate(file, openReadOnly);
 }
 
 File::~File()

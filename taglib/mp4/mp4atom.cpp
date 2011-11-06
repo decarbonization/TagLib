@@ -27,8 +27,6 @@
 #include <config.h>
 #endif
 
-#ifdef WITH_MP4
-
 #include <TagLib/tdebug.h>
 #include <TagLib/tstring.h>
 #include <TagLib/mp4atom.h>
@@ -178,5 +176,3 @@ MP4::Atoms::path(const char *name1, const char *name2, const char *name3, const 
   }
   return path;
 }
-
-#endif

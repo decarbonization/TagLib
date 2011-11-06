@@ -75,15 +75,16 @@ extern NSData *TLMetaDataGetDataForImage(NSImage *image, NSString **mimeType);
 /*!
  @method
  @abstract		Initialize a TLMetaData object with a URL. This is the designated initializer of TLMetaData.
- @param			url		The URL of the file to initialize TLMetaData to edit. May not be nil.
- @param			error	On return, any error that might have occurred during execution of this method.
- @result	A new instance of TLMetaData if the URL can be read from/written to; nil otherwise.
+ @param			url				The URL of the file to initialize TLMetaData to edit. May not be nil.
+ @param			openReadOnly	Whether or not the file should be opened in readonly mode.
+ @param			error			On return, any error that might have occurred during execution of this method.
+ @result		A new instance of TLMetaData if the URL can be read from/written to; nil otherwise.
  @discussion	This method should be overriden by subclasses. TLMetaData will call this method on a
 				subclass if it finds a class that is capable of handling the URL passed to it.
 				
 				(Note, TLMetaData's built in classes _do not_ understand remote URLs.)
  */
-- (id)initWithURL:(NSURL *)url error:(NSError **)error;
+- (id)initWithURL:(NSURL *)url openReadOnly:(BOOL)openReadOnly error:(NSError **)error;
 
 /*!
  @method

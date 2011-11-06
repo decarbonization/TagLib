@@ -35,7 +35,6 @@ namespace TagLib {
 
   namespace ID3v2 { class Tag; class FrameFactory; }
   namespace ID3v1 { class Tag; }
-  namespace APE { class Tag; }
 
   //! An implementation of TagLib::File with MPEG (MP3) specific methods
 
@@ -63,22 +62,9 @@ namespace TagLib {
         ID3v1   = 0x0001,
         //! Matches ID3v2 tags.
         ID3v2   = 0x0002,
-        //! Matches APE tags.
-        APE     = 0x0004,
         //! Matches all tag types.
         AllTags = 0xffff
       };
-
-      /*!
-       * Contructs an MPEG file from \a file.  If \a readProperties is true the
-       * file's audio properties will also be read using \a propertiesStyle.  If
-       * false, \a propertiesStyle is ignored.
-       *
-       * \deprecated This constructor will be dropped in favor of the one below
-       * in a future version.
-       */
-      File(FileName file, bool readProperties = true,
-           Properties::ReadStyle propertiesStyle = Properties::Average);
 
       /*!
        * Contructs an MPEG file from \a file.  If \a readProperties is true the
@@ -87,7 +73,9 @@ namespace TagLib {
        * \a frameFactory.
        */
       // BIC: merge with the above constructor
-      File(FileName file, ID3v2::FrameFactory *frameFactory,
+      File(FileName file, 
+		   bool openReadOnly = false,
+		   ID3v2::FrameFactory *frameFactory = NULL,
            bool readProperties = true,
            Properties::ReadStyle propertiesStyle = Properties::Average);
 
@@ -111,7 +99,6 @@ namespace TagLib {
        *
        * \see ID3v1Tag()
        * \see ID3v2Tag()
-       * \see APETag()
        */
       virtual Tag *tag() const;
 
@@ -188,26 +175,13 @@ namespace TagLib {
       ID3v1::Tag *ID3v1Tag(bool create = false);
 
       /*!
-       * Returns a pointer to the APE tag of the file.
-       *
-       * If \a create is false (the default) this will return a null pointer
-       * if there is no valid APE tag.  If \a create is true it will create
-       * an APE tag if one does not exist.
-       *
-       * \note The Tag <b>is still</b> owned by the MPEG::File and should not be
-       * deleted by the user.  It will be deleted when the file (object) is
-       * destroyed.
-       */
-      APE::Tag *APETag(bool create = false);
-
-      /*!
        * This will strip the tags that match the OR-ed together TagTypes from the
        * file.  By default it strips all tags.  It returns true if the tags are
        * successfully stripped.
        *
        * This is equivalent to strip(tags, true)
        *
-       * \note This will also invalidate pointers to the ID3 and APE tags
+       * \note This will also invalidate pointers to the ID3 tags
        * as their memory will be freed.
        */
       bool strip(int tags = AllTags);
@@ -217,7 +191,7 @@ namespace TagLib {
        * file.  By default it strips all tags.  It returns true if the tags are
        * successfully stripped.
        *
-       * If \a freeMemory is true the ID3 and APE tags will be deleted and
+       * If \a freeMemory is true the ID3 tags will be deleted and
        * pointers to them will be invalidated.
        */
       // BIC: merge with the method above
@@ -259,7 +233,6 @@ namespace TagLib {
       void read(bool readProperties, Properties::ReadStyle propertiesStyle);
       long findID3v2();
       long findID3v1();
-      void findAPE();
 
       /*!
        * MPEG frames can be recognized by the bit pattern 11111111 111, so the

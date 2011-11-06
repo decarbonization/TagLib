@@ -11,7 +11,6 @@
 
 #import "TagLib.h"
 #import "tstring.h"
-#import "fileref.h"
 #import "mpegfile.h"
 #import "id3v2tag.h"
 #import "textidentificationframe.h"
@@ -49,20 +48,20 @@ using namespace TagLib;
 	{
 		if([[url pathExtension] isEqualToString:@"mp3"])
 		{
-			MPEG::File file([[url path] fileSystemRepresentation]);
+			MPEG::File file([[url path] fileSystemRepresentation], /*openReadOnly=*/true);
 			return (file.isOpen() && file.isValid());
 		}
 	}
 	return NO;
 }
 
-- (id)initWithURL:(NSURL *)url error:(NSError **)error
+- (id)initWithURL:(NSURL *)url openReadOnly:(BOOL)openReadOnly error:(NSError **)error
 {
 	NSAssert([url isFileURL], @"Non-local URL given to TLID3MetaData.");
 	
 	if(url && (self = [super init]))
 	{
-		_tagFile = new MPEG::File([[url path] fileSystemRepresentation]);
+		_tagFile = new MPEG::File([[url path] fileSystemRepresentation], openReadOnly);
 		if(!_tagFile || !(_tagFile->isOpen() && _tagFile->isValid()))
 		{
 			if(_tagFile)

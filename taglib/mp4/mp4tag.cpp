@@ -27,8 +27,6 @@
 #include <config.h>
 #endif
 
-#ifdef WITH_MP4
-
 #include <TagLib/tdebug.h>
 #include <TagLib/tstring.h>
 #include <TagLib/mp4atom.h>
@@ -600,5 +598,3 @@ MP4::Tag::itemListMap()
 {
   return d->items;
 }
-
-#endif
