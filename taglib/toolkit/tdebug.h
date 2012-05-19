@@ -26,6 +26,9 @@
 #ifndef TAGLIB_DEBUG_H
 #define TAGLIB_DEBUG_H
 
+/* Disable Debug Logging */
+#define NDEBUG 1
+
 namespace TagLib {
 
   class String;
