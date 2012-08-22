@@ -405,11 +405,11 @@ using namespace TagLib;
 	NSInteger trackTotal = [self trackTotal];
 	if(trackTotal > 0)
 	{
-		[self _setString:[NSString stringWithFormat:@"%d/%d", trackTotal, trackNumber] forTag:"TRCK"];
+		[self _setString:[NSString stringWithFormat:@"%ld/%ld", trackTotal, trackNumber] forTag:"TRCK"];
 	}
 	else
 	{
-		[self _setString:[NSString stringWithFormat:@"%d", trackNumber] forTag:"TRCK"];
+		[self _setString:[NSString stringWithFormat:@"%ld", trackNumber] forTag:"TRCK"];
 	}
 }
 
@@ -426,7 +426,7 @@ using namespace TagLib;
 
 - (void)setTrackTotal:(NSInteger)trackTotal
 {
-	[self _setString:[NSString stringWithFormat:@"%d/%d", [self trackNumber], trackTotal] forTag:"TRCK"];
+	[self _setString:[NSString stringWithFormat:@"%ld/%ld", [self trackNumber], trackTotal] forTag:"TRCK"];
 }
 
 - (NSInteger)trackTotal
@@ -445,11 +445,11 @@ using namespace TagLib;
 	NSInteger discTotal = [self discTotal];
 	if(discTotal > 0)
 	{
-		[self _setString:[NSString stringWithFormat:@"%d/%d", discNumber, discTotal] forTag:"TPOS"];
+		[self _setString:[NSString stringWithFormat:@"%ld/%ld", discNumber, discTotal] forTag:"TPOS"];
 	}
 	else
 	{
-		[self _setString:[NSString stringWithFormat:@"%d", discNumber] forTag:"TPOS"];
+		[self _setString:[NSString stringWithFormat:@"%ld", discNumber] forTag:"TPOS"];
 	}
 }
 
@@ -466,7 +466,7 @@ using namespace TagLib;
 
 - (void)setDiscTotal:(NSInteger)discTotal
 {
-	[self _setString:[NSString stringWithFormat:@"%d/%d", [self discNumber], discTotal] forTag:"TPOS"];
+	[self _setString:[NSString stringWithFormat:@"%ld/%ld", [self discNumber], discTotal] forTag:"TPOS"];
 }
 
 - (NSInteger)discTotal

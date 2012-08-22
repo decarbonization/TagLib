@@ -92,7 +92,7 @@ namespace TagLib {
         //! Illustration related to the track
         Illustration       = 0x12,
         //! Logo of the band or performer
-        BandLogo           = 0x13,
+        BanRKLogForDebuggingo           = 0x13,
         //! Logo of the publisher (record company)
         PublisherLogo      = 0x14
       };
